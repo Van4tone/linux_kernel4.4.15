@@ -245,54 +245,54 @@ static unsigned const char init_register_array[][2] = {
 		{0x7E,0x01},
 };
 
-#define BITM(x)                          ( 1 << x )
+#define BITM(x)                                       ( 1 << x )
 
-#define INIT_REG_ARRAY_SIZE             (sizeof(init_register_array)/sizeof(init_register_array[0]))
-#define BTGRM_VAL(val, maskbit)	    	( val << maskbit )
-#define BTGRM_BANK0				    	BTGRM_VAL(0,0)
+#define INIT_REG_ARRAY_SIZE                           (sizeof(init_register_array)/sizeof(init_register_array[0]))
+#define BTGRM_VAL(val, maskbit)	         	          ( val << maskbit )
+#define BTGRM_BANK0				        	          BTGRM_VAL(0,0)
 
 // REGISTER BANK 0 SELECT 
-#define BTGRM_ADDR_BASE 					0x00
-#define BTGRM_REGISTER_BANK0 				(BTGRM_ADDR_BASE + 0xEF)
+#define BTGRM_ADDR_BASE 					          0x00
+#define BTGRM_REGISTER_BANK0 				          (BTGRM_ADDR_BASE + 0xEF)
 
 //REGISTER BANK 0
 
-#define BTGRM_ADDR_GES_DET_MASK_0           (BTGRM_ADDR_BASE + 0x41)
-#define BTGRM_ADDR_GES_DET_MASK_1   		(BTGRM_ADDR_BASE + 0x42)
-#define BTGRM_ADDR_GES_DET_FLAG_0			(BTGRM_ADDR_BASE + 0X43)
-#define BTGRM_ADDR_GES_DET_FLAG_1  			(BTGRM_ADDR_BASE + 0x44)
+#define BTGRM_ADDR_GES_DET_MASK_0                     (BTGRM_ADDR_BASE + 0x41)
+#define BTGRM_ADDR_GES_DET_MASK_1   		          (BTGRM_ADDR_BASE + 0x42)
+#define BTGRM_ADDR_GES_DET_FLAG_0			          (BTGRM_ADDR_BASE + 0X43)
+#define BTGRM_ADDR_GES_DET_FLAG_1  			          (BTGRM_ADDR_BASE + 0x44)
 
 //
 enum {
-		BTGRM_NO_GES_DET                     = 0,
-		BTGRM_RIGHT_FLAG    				 = BITM(1),
-		BTGRM_LEFT_FLAG     				 = BITM (0),
-		BTGRM_UP_FLAG      					 = BITM(3),
-		BTGRM_DOWN_FLAG      				 = BITM(2),
-		BTGRM_FORWARD_FLAG     				 = BITM(4),
-		BTGRM_BACKWARD_FLAG      			 = BITM(5),
-		BTGRM_CLOCKWISE_FLAG   			     = BITM(6),
-		BTGRM_COUNTER_CLOCKWISE_FLAG         = BITM(7),
+		BTGRM_NO_GES_DET                               = 0,
+		BTGRM_RIGHT_FLAG    				           = BITM(1),
+		BTGRM_LEFT_FLAG     				           = BITM (0),
+		BTGRM_UP_FLAG      					           = BITM(3),
+		BTGRM_DOWN_FLAG      				           = BITM(2),
+		BTGRM_FORWARD_FLAG     				           = BITM(4),
+		BTGRM_BACKWARD_FLAG      			           = BITM(5),
+		BTGRM_CLOCKWISE_FLAG   			               = BITM(6),
+		BTGRM_COUNTER_CLOCKWISE_FLAG                   = BITM(7),
 		//bank 1
-		BTGRM_WAVE_FLAG                      = BITM(0),               
+		BTGRM_WAVE_FLAG                                = BITM(0),               
 };
 
 enum {
 		
-         BTGRM_LEFT                          = BITM(1),    
-	     BTGRM_RIGHT                         = BITM(0),          
-	     BTGRM_DOWN                          = BITM(2),    
-         BTGRM_UP                            = BITM(3),    
-         BTGRM_FORWARD                   	 = BITM(4),
-         BTGRM_BACKWARD                 	 = BITM(5),	 
-		 BTGRM_CLOCKWISE                	 = BITM(6),	 
-         BTGRM_COUNTER_CLOCKWISE             = BITM(7),
+         BTGRM_LEFT                                    = BITM(1),    
+	     BTGRM_RIGHT                                   = BITM(0),          
+	     BTGRM_DOWN                         		   = BITM(2),    
+         BTGRM_UP                           	       = BITM(3),    
+         BTGRM_FORWARD                   			   = BITM(4),
+         BTGRM_BACKWARD                 			   = BITM(5),	 
+		 BTGRM_CLOCKWISE                			   = BITM(6),	 
+         BTGRM_COUNTER_CLOCKWISE             		   = BITM(7),
 };
 
 
-#define         MAGIC    'M'
+#define         MAGIC   							   'M'
 
-#define         BTGRM_GES_FLAG_VAL 			_IOR(MAGIC,0,char)
+#define         BTGRM_GES_FLAG_VAL 			           _IOR(MAGIC,0,char)
 
 
 #endif
